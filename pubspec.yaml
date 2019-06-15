@@ -1,0 +1,27 @@
+name: mall_demo
+description: Flutter实战
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+
+#生产环境
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^0.1.2
+  #  网络请求库
+  dio: ^2.1.7
+  #  图片轮播
+  flutter_swiper: ^1.1.6
+  #  屏幕适配
+  flutter_screenutil: ^0.5.2
+
+#开发环境   上线时不会被打包进去
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true

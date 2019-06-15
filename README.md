@@ -1,16 +1,8 @@
 # mall_demo
 
-Flutter实战
+Flutter 电商实战
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+- [Flutter 中文网](https://flutterchina.club/)
+- [Flutter 社区中文资源](https://flutter-io.cn/)
+- [各种手机屏幕尺寸](https://material.io/tools/devices/)

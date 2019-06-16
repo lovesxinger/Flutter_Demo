@@ -33,7 +33,7 @@ class _IndexPageState extends State<IndexPage> {
   ];
 
   //  封装四个页面
-  final List tabBodies = [
+  final List<Widget> tabBodies = [
     new HomePage(),
     new CategoryPage(),
     new CartPage(),
@@ -69,7 +69,10 @@ class _IndexPageState extends State<IndexPage> {
           });
         },
       ),
-      body: currentPage,
+      body: new IndexedStack(// 页面保持  不重新加载
+        index: currentIndex,  // 页面当前索引
+        children: tabBodies // 页面集合
+      ),
     );
   }
 }

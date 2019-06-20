@@ -19,6 +19,8 @@ dependencies:
   flutter_screenutil: ^0.5.2
   #  启动URL的插件
   url_launcher: ^5.0.3
+  #  上拉加载
+  flutter_easyrefresh: ^1.2.7
 
 #开发环境   上线时不会被打包进去
 dev_dependencies:

@@ -6,4 +6,7 @@ const serviceUrl = 'http://v.jspang.com:8088/baixing';
 const servicePath = {
     // 首页接口地址
     'homePageContent' : serviceUrl + '/wxmini/homePageContent',
+
+    // 首页火爆专区接口地址
+    'homePageBelowConten' : serviceUrl + '/wxmini/homePageBelowConten',
 };

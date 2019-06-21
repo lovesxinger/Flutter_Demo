@@ -15,4 +15,7 @@ const servicePath = {
 
     // 商品分类中的商品列表
     "getMallGoods": serviceUrl + "/wxmini/getMallGoods",
+
+    // 商品详情
+    "getGoodDetailById" : serviceUrl + "/wxmini/getGoodDetailById",
 };

@@ -1,8 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:mall_demo/pages/index_page.dart';
+import 'package:provide/provide.dart';
+import 'provide/child_category.dart';
+import 'provide/category_goods_list.dart';
 
 void main() {
-  runApp(new MyApp());
+
+  //  注册 全局状态管理
+  final providers = new Providers()
+  ..provide(Provider.function((context){
+    return new ChildCategoryProvide();
+  }))
+  ..provide(Provider.function((context){
+      return new CategoryGoodsListProvide();
+  }));
+
+
+  runApp(
+    new ProviderNode(
+      child: new MyApp(),
+      providers: providers,
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {

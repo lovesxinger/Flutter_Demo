@@ -25,11 +25,6 @@ class _HomePageState extends State<HomePage>
   GlobalKey<RefreshFooterState> _footerKey = new GlobalKey<RefreshFooterState>();
 
   @override
-  void initState() {
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return new Container(
       child: new Scaffold(
@@ -291,6 +286,7 @@ class TopNavitator extends StatelessWidget {
       height: new ScreenUtil().setHeight(300),
       padding: const EdgeInsets.all(3),
       child: new GridView.count(
+        physics: NeverScrollableScrollPhysics(), //  禁止滚动（否则会有手势冲突,外层是listciew）
         crossAxisCount: 5, // 每行显示5个
         padding: const EdgeInsets.all(5),
         children: navigatorList.map((item) {

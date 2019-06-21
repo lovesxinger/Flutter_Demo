@@ -4,7 +4,7 @@ import 'cart_page.dart'; // 购物车
 import 'category_page.dart'; // 分类
 import 'home_page.dart'; // 首页
 import 'member_page.dart'; // 会员中心
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart'; // 屏幕适配
 
 class IndexPage extends StatefulWidget {
   @override

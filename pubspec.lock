@@ -88,6 +88,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  fluttertoast:
+    dependency: "direct main"
+    description:
+      name: fluttertoast
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "3.1.0"
   matcher:
     dependency: transitive
     description:
@@ -116,6 +123,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.5.0"
+  provide:
+    dependency: "direct main"
+    description:
+      name: provide
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "1.0.2"
   quiver:
     dependency: transitive
     description:

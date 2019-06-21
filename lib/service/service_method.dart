@@ -6,7 +6,7 @@ import 'package:mall_demo/config/service_url.dart';
 
 /// 网络请求   第二个是可选参数
 Future request(url, {formData}) async {
-  print("开始获取数据..................");
+  print("开始请求数据.......${servicePath[url]}   参数：${formData == null? "无": formData.toString()}");
   try {
     Response response;
     Dio dio = new Dio();
@@ -23,6 +23,7 @@ Future request(url, {formData}) async {
       ); // 发送请求
     }
     if (response.statusCode == 200) {
+//      print("请求数据成功: >>>>>>  ${response.data}");
       return response.data;
     } else {
       throw Exception("后端接口出现异常");

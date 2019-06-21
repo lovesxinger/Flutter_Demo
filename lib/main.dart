@@ -3,6 +3,9 @@ import 'package:mall_demo/pages/index_page.dart';
 import 'package:provide/provide.dart';
 import 'provide/child_category.dart';
 import 'provide/category_goods_list.dart';
+import 'package:fluro/fluro.dart';
+import 'routers/routers.dart';
+import 'routers/application.dart';
 
 void main() {
 
@@ -27,9 +30,14 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final router = new Router();  // 声明路由
+    Routers.configRouters(router);
+    Application.router = router;
+
     return Container(
       child: new MaterialApp(
         title: "电商实战",
+        onGenerateRoute: Application.router.generator,
         debugShowCheckedModeBanner: false, // 去掉右上角的debug文字条
         theme: new ThemeData(
           primaryColor: Colors.pink, // 主题为粉红色

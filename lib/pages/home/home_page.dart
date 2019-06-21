@@ -5,6 +5,7 @@ import 'dart:convert';
 import 'package:flutter_screenutil/flutter_screenutil.dart'; // 屏幕适配
 import 'package:url_launcher/url_launcher.dart'; // url插件
 import 'package:flutter_easyrefresh/easy_refresh.dart'; // 上拉加载
+import '../../routers/application.dart';
 
 /// 首页
 class HomePage extends StatefulWidget {
@@ -167,7 +168,10 @@ class _HomePageState extends State<HomePage>
     if (hotGoodsList.length != 0) {
       List<Widget> listWidget = hotGoodsList.map((data) {
         return new InkWell(
-          onTap: () {},
+          onTap: () {
+            // 跳转到商品详情页
+            Application.router.navigateTo(context, "/goods?id=${data['goodsId']}");
+          },
           child: new Container(
             width: new ScreenUtil().setWidth(372),
             color: Colors.white,

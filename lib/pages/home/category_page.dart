@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:mall_demo/service/service_method.dart';
 import 'dart:convert'; // 解析
 import 'package:mall_demo/model/category_entity.dart';
-import 'package:mall_demo/entity_factory.dart';
+import 'package:mall_demo/model/factory/entity_factory.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provide/provide.dart';
-import '../provide/child_category.dart';
-import '../model/category_goods_list_entity.dart';
-import '../provide/category_goods_list.dart';
+import '../../provide/child_category.dart';
+import '../../model/category_goods_list_entity.dart';
+import '../../provide/category_goods_list.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 

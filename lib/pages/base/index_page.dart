@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart'; // md 风格
 import 'package:flutter/cupertino.dart'; // ios 风格
-import 'package:mall_demo/pages/home/cart_page.dart'; // 购物车
-import 'package:mall_demo/pages/home/category_page.dart'; // 分类
+import 'package:mall_demo/pages/cart/cart_page.dart'; // 购物车
+import 'package:mall_demo/pages/category/category_page.dart'; // 分类
 import 'package:mall_demo/pages/home/home_page.dart'; // 首页
-import 'package:mall_demo/pages/home/member_page.dart'; // 会员中心
+import 'package:mall_demo/pages/personal/member_page.dart'; // 会员中心
 import 'package:flutter_screenutil/flutter_screenutil.dart'; // 屏幕适配
 
 class IndexPage extends StatefulWidget {

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:mall_demo/pages/index_page.dart';
+import 'package:mall_demo/pages/base/index_page.dart';
 import 'package:provide/provide.dart';
-import 'provide/child_category_provide.dart';
-import 'provide/category_goods_list_provide.dart';
+import '../../provide/child_category_provide.dart';
+import '../../provide/category_goods_list_provide.dart';
 import 'package:fluro/fluro.dart';
-import 'routers/routers.dart';
-import 'routers/application.dart';
-import 'provide/goods_detail_provide.dart';
+import '../../routers/routers.dart';
+import '../../routers/application.dart';
+import '../../provide/goods_detail_provide.dart';
 
 void main() {
 

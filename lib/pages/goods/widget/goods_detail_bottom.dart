@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provide/provide.dart';
 import 'package:mall_demo/provide/cart/cart_provide.dart';
 import 'package:mall_demo/provide/goods/goods_detail_provide.dart';
+import 'package:mall_demo/provide/index/current_index.dart';
 
 class GoodsDetailBottom extends StatelessWidget {
   @override
@@ -18,15 +19,41 @@ class GoodsDetailBottom extends StatelessWidget {
         children: <Widget>[
           new InkWell(
             onTap: () {
-              Provide.value<CartProvide>(context).getCartInfo();
+              Provide.value<CurrentIndexProvide>(context).changeIndex(2);
+              Navigator.pop(context);
             },
             child: new Container(
               width: new ScreenUtil().setWidth(110),
               alignment: Alignment.center,
-              child: new Icon(
-                Icons.shopping_cart,
-                color: Colors.pink,
-                size: 35,
+              child: new Stack(
+                children: <Widget>[
+                  new Icon(
+                    Icons.shopping_cart,
+                    color: Colors.pink,
+                    size: 35,
+                  ),
+                  new Provide<CartProvide>(
+                    builder: (context, child, data) {
+                      return new Positioned(
+                        top: 0,
+                        right: 3,
+                        child: new Container(
+                          child: new CircleAvatar(
+                            backgroundColor: Colors.pink,
+                            radius: 9,
+                            child: new Text(
+                              "${data.allCount}",
+                              style: new TextStyle(
+                                color: Colors.white,
+                                fontSize: new ScreenUtil().setSp(18),
+                              ),
+                            ),
+                          ),
+                        ),
+                      );
+                    },
+                  )
+                ],
               ),
             ),
           ),
@@ -55,9 +82,7 @@ class GoodsDetailBottom extends StatelessWidget {
             ),
           ),
           new InkWell(
-            onTap: () async {
-              await Provide.value<CartProvide>(context).clear();
-            },
+            onTap: () async {},
             child: new Container(
               width: new ScreenUtil().setWidth(320),
               alignment: Alignment.center,

@@ -8,6 +8,7 @@ import 'package:mall_demo/routers/routers.dart';
 import 'package:mall_demo/routers/application.dart';
 import 'package:mall_demo/provide/goods/goods_detail_provide.dart';
 import 'package:mall_demo/provide/cart/cart_provide.dart';
+import 'package:mall_demo/provide/index/current_index.dart';
 
 void main() {
 
@@ -24,6 +25,9 @@ void main() {
   }))
   ..provide(Provider.function((context){
     return new CartProvide();
+  }))
+  ..provide(Provider.function((context){
+    return new CurrentIndexProvide();
   }));
 
 

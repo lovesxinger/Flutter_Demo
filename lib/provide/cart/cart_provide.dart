@@ -24,6 +24,8 @@ class CartProvide with ChangeNotifier {
       isCheck: true,
     );
 
+    allPrice = 0;
+    allCount = 0;
     if (str == null) {
       //  说明还没有存储数据
       CartInfoEntity entity = new CartInfoEntity(
@@ -50,6 +52,7 @@ class CartProvide with ChangeNotifier {
       }
       String saveData = json.encode(entity);
       shared.setString(KEY, saveData);
+      getCartInfo();
     }
   }
 
@@ -57,11 +60,11 @@ class CartProvide with ChangeNotifier {
   void getCartInfo() async {
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
     String saveData = sharedPreferences.getString(KEY);
+    allPrice = 0;
+    allCount = 0;
     if (saveData == null) {
       listData = [];
     } else {
-      allPrice = 0;
-      allCount = 0;
       CartInfoEntity entity = EntityFactory.generateOBJ<CartInfoEntity>(
           json.decode(saveData.toString()));
       listData = entity.data;

@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:mall_demo/pages/base/index_page.dart';
 import 'package:provide/provide.dart';
-import '../../provide/child_category_provide.dart';
-import '../../provide/category_goods_list_provide.dart';
+import 'package:mall_demo/provide/category/child_category_provide.dart';
+import 'package:mall_demo/provide/category/category_goods_list_provide.dart';
 import 'package:fluro/fluro.dart';
-import '../../routers/routers.dart';
-import '../../routers/application.dart';
-import '../../provide/goods_detail_provide.dart';
+import 'package:mall_demo/routers/routers.dart';
+import 'package:mall_demo/routers/application.dart';
+import 'package:mall_demo/provide/goods/goods_detail_provide.dart';
+import 'package:mall_demo/provide/cart/cart_provide.dart';
 
 void main() {
 
@@ -20,6 +21,9 @@ void main() {
   }))
   ..provide(Provider.function((context){
     return new GoodsDetailProvide();
+  }))
+  ..provide(Provider.function((context){
+    return new CartProvide();
   }));
 
 

@@ -5,7 +5,7 @@ import 'dart:convert';
 import 'package:flutter_screenutil/flutter_screenutil.dart'; // 屏幕适配
 import 'package:url_launcher/url_launcher.dart'; // url插件
 import 'package:flutter_easyrefresh/easy_refresh.dart'; // 上拉加载
-import '../../routers/application.dart';
+import 'package:mall_demo/routers/application.dart';
 
 /// 首页
 class HomePage extends StatefulWidget {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provide/provide.dart';
-import '../../../provide/goods_detail_provide.dart';
+import 'package:mall_demo/provide/goods/goods_detail_provide.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class GoodsDetailTabbar extends StatelessWidget {

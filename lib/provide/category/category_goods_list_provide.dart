@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../model/category_goods_list_entity.dart';
+import 'package:mall_demo/model/category_goods_list_entity.dart';
 
 
 ///  商品列表状态管理

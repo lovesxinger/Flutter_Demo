@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import '../../../provide/goods_detail_provide.dart';
+import 'package:mall_demo/provide/goods/goods_detail_provide.dart';
 import 'package:provide/provide.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_html/flutter_html.dart';
-import '../../../model/goods_detail_entity.dart';
+import 'package:mall_demo/model/goods_detail_entity.dart';
 
 class GoodsDetailWebView extends StatelessWidget {
   @override

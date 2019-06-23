@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../model/category_entity.dart';
+import 'package:mall_demo/model/category_entity.dart';
 
 ///  全局状态管理
 ///

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import '../model/goods_detail_entity.dart';
-import '../service/service_method.dart';
+import '../../model/goods_detail_entity.dart';
+import '../../service/service_method.dart';
 import 'dart:convert';
-import 'package:mall_demo/model/factory/entity_factory.dart';
+import 'package:mall_demo/entity_factory.dart';
 
 class GoodsDetailProvide with ChangeNotifier {
   GoodsDetailEntity entity = null;

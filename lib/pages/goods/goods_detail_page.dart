@@ -6,6 +6,7 @@ import 'widget/goods_detail_explain.dart';
 import 'widget/goods_detail_tabbar.dart';
 import 'widget/goods_detail_info.dart';
 import 'widget/goods_detail_bottom.dart';
+import 'package:mall_demo/config/service_url.dart';
 
 ///  商品详情页面
 class GoodsDetailPage extends StatelessWidget {
@@ -17,12 +18,6 @@ class GoodsDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
-        leading: new IconButton(
-          icon: new Icon(Icons.arrow_back),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        ),
         title: new Text("商品详情"),
       ),
       body: new FutureBuilder(

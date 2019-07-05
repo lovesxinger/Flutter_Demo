@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import '../../model/goods_detail_entity.dart';
-import '../../service/service_method.dart';
+import 'package:mall_demo/model/goods_detail_entity.dart';
+import 'package:mall_demo/service/service_method.dart';
 import 'dart:convert';
 import 'package:mall_demo/entity_factory.dart';
+import 'package:mall_demo/config/service_url.dart';
 
 class GoodsDetailProvide with ChangeNotifier {
-  GoodsDetailEntity entity = null;
+  GoodsDetailEntity entity;
   bool isLeft = true;
   bool isRight = false;
 
@@ -14,7 +15,7 @@ class GoodsDetailProvide with ChangeNotifier {
     var params = {
       'goodId': goodsId,
     };
-    await request("getGoodDetailById", formData: params).then((val) {
+    await request(ServiceUrl.getGoodDetailById, formData: params).then((val) {
       var data = json.decode(val.toString());
       entity = EntityFactory.generateOBJ<GoodsDetailEntity>(data);
       notifyListeners();

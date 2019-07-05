@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mall_demo/pages/map/map_page.dart';
-import 'package:mall_demo/routers/application.dart';
 
 ///  个人中心页面
 class PersonalPage extends StatelessWidget {

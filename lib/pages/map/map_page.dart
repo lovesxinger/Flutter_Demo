@@ -31,6 +31,13 @@ class MapPage extends StatelessWidget {
 //        ),
 //      ),
 //    );
-  return new Text("啊啊啊");
+    return new Scaffold(
+      appBar: new AppBar(
+        title: new Text("测试高德地图集成"),
+      ),
+      body: new Center(
+        child: new Text("啊啊啊啊"),
+      ),
+    );
   }
 }

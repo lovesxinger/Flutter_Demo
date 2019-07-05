@@ -3,12 +3,10 @@ import 'package:mall_demo/pages/base/index_page.dart';
 import 'package:provide/provide.dart';
 import 'package:mall_demo/provide/category/child_category_provide.dart';
 import 'package:mall_demo/provide/category/category_goods_list_provide.dart';
-import 'package:fluro/fluro.dart';
-import 'package:mall_demo/routers/routers.dart';
-import 'package:mall_demo/routers/application.dart';
 import 'package:mall_demo/provide/goods/goods_detail_provide.dart';
 import 'package:mall_demo/provide/cart/cart_provide.dart';
-import 'package:mall_demo/provide/index/current_index.dart';
+import 'package:mall_demo/provide/index/current_index_provide.dart';
+import 'package:mall_demo/provide/home/home_provide.dart';
 
 void main() {
 
@@ -28,6 +26,9 @@ void main() {
   }))
   ..provide(Provider.function((context){
     return new CurrentIndexProvide();
+  }))
+  ..provide(Provider.function((context){
+    return new HomeProvide();
   }));
 
 
@@ -42,14 +43,9 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final router = new Router();  // 声明路由
-    Routers.configRouters(router);
-    Application.router = router;
-
     return Container(
       child: new MaterialApp(
         title: "电商实战",
-        onGenerateRoute: Application.router.generator,
         debugShowCheckedModeBanner: false, // 去掉右上角的debug文字条
         theme: new ThemeData(
           primaryColor: Colors.pink, // 主题为粉红色

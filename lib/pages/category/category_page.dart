@@ -10,9 +10,9 @@ import 'package:mall_demo/model/category_goods_list_entity.dart';
 import 'package:mall_demo/provide/category/category_goods_list_provide.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import '../../routers/application.dart';
-
-
+import 'package:mall_demo/pages/goods/goods_detail_page.dart';
+import 'package:mall_demo/config/service_url.dart';
+import 'package:mall_demo/config/service_url.dart';
 
 ///  商品分类页面
 class CategoryPage extends StatefulWidget {
@@ -122,7 +122,7 @@ class _LeftCategoryState extends State<LeftCategory> {
 
   // 获取数据   左侧类别
   void _getCategory() async {
-    await request('getCategory').then((data) {
+    await request(ServiceUrl.getCategory).then((data) {
       var value = json.decode(data.toString());
       CategoryEntity item = EntityFactory.generateOBJ<CategoryEntity>(value);
       setState(() {
@@ -142,7 +142,7 @@ class _LeftCategoryState extends State<LeftCategory> {
       'categorySubId': "",
       'page': "1",
     };
-    await request("getMallGoods", formData: params).then((val) {
+    await request(ServiceUrl.getMallGoods, formData: params).then((val) {
       CategoryGoodsListEntity item =
           EntityFactory.generateOBJ<CategoryGoodsListEntity>(
               json.decode(val.toString()));
@@ -218,7 +218,7 @@ class _RightTopCategoryState extends State<RightTopCategory> {
       'categorySubId': childId,
       'page': "1",
     };
-    await request("getMallGoods", formData: params).then((val) {
+    await request(ServiceUrl.getMallGoods, formData: params).then((val) {
       CategoryGoodsListEntity item =
           EntityFactory.generateOBJ<CategoryGoodsListEntity>(
               json.decode(val.toString()));
@@ -304,21 +304,22 @@ class _CategoryGoodsListState extends State<CategoryGoodsList> {
       'categorySubId': Provide.value<ChildCategoryProvide>(context).subId,
       'page': Provide.value<ChildCategoryProvide>(context).page,
     };
-    await request("getMallGoods", formData: params).then((val) {
+    await request(ServiceUrl.getMallGoods, formData: params).then((val) {
       CategoryGoodsListEntity item =
           EntityFactory.generateOBJ<CategoryGoodsListEntity>(
               json.decode(val.toString()));
       if (item.data == null || item.data.length == 0) {
         Provide.value<ChildCategoryProvide>(context).changeNoMoreText("没有数据啦");
-        Fluttertoast.showToast( /// Toast 提示  在苹果上显示不出来？？？
+        Fluttertoast.showToast(
+
+            /// Toast 提示  在苹果上显示不出来？？？
             msg: "没有数据啦",
             toastLength: Toast.LENGTH_SHORT,
             gravity: ToastGravity.CENTER,
             timeInSecForIos: 1,
             backgroundColor: Colors.pink,
             textColor: Colors.white,
-            fontSize: 16.0
-        );
+            fontSize: 16.0);
       } else {
         Provide.value<CategoryGoodsListProvide>(context)
             .getGoodsMoreList(item.data);
@@ -329,7 +330,12 @@ class _CategoryGoodsListState extends State<CategoryGoodsList> {
   Widget _listItem(List<CategoryGoodsListData> data, index) {
     return new InkWell(
       onTap: () {
-          Application.router.navigateTo(context, "/goods?id=${data[index].goodsId}");
+        Navigator.push(
+          context,
+          new MaterialPageRoute(
+            builder: (context) => new GoodsDetailPage(data[index].goodsId),
+          ),
+        );
       },
       child: new Container(
         padding: const EdgeInsets.only(top: 5, bottom: 5),

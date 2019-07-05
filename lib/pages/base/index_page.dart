@@ -6,7 +6,7 @@ import 'package:mall_demo/pages/home/home_page.dart'; // 首页
 import 'package:mall_demo/pages/personal/personal_page.dart'; // 会员中心
 import 'package:flutter_screenutil/flutter_screenutil.dart'; // 屏幕适配
 import 'package:provide/provide.dart';
-import 'package:mall_demo/provide/index/current_index.dart';
+import 'package:mall_demo/provide/index/current_index_provide.dart';
 
 class IndexPage extends StatelessWidget {
   // 封装四个tab按钮
@@ -53,10 +53,10 @@ class IndexPage extends StatelessWidget {
           },
         ),
         body: new IndexedStack(
-            // 页面保持  不重新加载
-            index: data.currentIndex, // 页面当前索引
-            children: tabBodies // 页面集合
-            ),
+          // 页面保持  不重新加载
+          index: data.currentIndex, // 页面当前索引
+          children: tabBodies, // 页面集合
+        ),
       );
     });
   }
